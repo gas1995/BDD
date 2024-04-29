@@ -1,8 +1,7 @@
-package ru.netology.page;
+package ru.netology.web.page;
 
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.Keys;
-import ru.netology.data.DataHelper;
+import ru.netology.web.data.DataHelper;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
@@ -16,7 +15,6 @@ public class VerificationPage {
     }
 
     public DashboardPage validVerify(DataHelper.VerificationCode verificationCode) {
-        codeField.sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         codeField.setValue(verificationCode.getCode());
         verifyButton.click();
         return new DashboardPage();
